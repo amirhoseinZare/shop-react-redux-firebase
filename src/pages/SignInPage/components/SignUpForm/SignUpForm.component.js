@@ -4,17 +4,16 @@ import {useState, useEffect} from "react"
 
 function SignUpForm(){
 
-    const [state, setState] =  useState({ password:'', email:'',})
+    const [state, setState] =  useState({ password:'', email:'', name:'',})
 
     const handleSubmit = async event => {
         event.preventDefault()
-        const { password, email } = state
+        const { password, email, name } = state
         try {
-            console.log(password, email)
-            const {user} = await auth.createUserWithEmailAndPassword( email, password )            
-            console.log(typeof user)
-            await createUserProfileDocument(user)
-            setState({  password:'', email:'' })
+            console.log(password, email, name)
+            const {user} = await auth.createUserWithEmailAndPassword( email, password)
+            await createUserProfileDocument(user, {displayName:name} )
+            setState({  password:'', email:'', name:'' })
         } catch (error) {
             console.log(error)
         }
@@ -26,11 +25,12 @@ function SignUpForm(){
         setState({...state, [name] : value })
     }
 
-    const { password, email} = state
+    const { password, email, name} = state
     return (
         <form onSubmit={handleSubmit} >
             <h3>Sign Up</h3>
             <h4 className="form-message">You don't have an account</h4>
+            <InputForm value={name} label="name" type="name" name="name" handleChange={handleChange}/>
             <InputForm value={email} label="email" type="text" name="email" handleChange={handleChange}/>
             <InputForm value={password} label="password" type="password" name="password" handleChange={handleChange}/>
             <Button className="signin-button" type="submit">sign up</Button>

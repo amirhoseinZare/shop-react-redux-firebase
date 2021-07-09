@@ -3,7 +3,7 @@ import { HomePage, HatsPage, NotFoundPage, ShopPage, AboutPage, SignInPage } fro
 import { Route, Switch, Link } from "react-router-dom"
 import { InputForm } from './components'; 
 import { Header } from "./layouts/index"
-import { auth, createUserProfileDocument } from "./utils/firebase.utils"
+import { auth, createUserProfileDocument, firestore } from "./utils/firebase.utils"
 import {useState, useEffect} from "react"
 
 function App() {
@@ -31,7 +31,6 @@ function App() {
        })
 
     })
-
     return unMount
   }, [])
 
