@@ -1,8 +1,11 @@
-import {SignInForm} from "./components/index"
+import {SignInForm, SignUpForm} from "./components/index"
 
 function SignInPage(){
     return (
-        <SignInForm/>
+        <section className="signin-form">
+            <SignInForm/>
+            <SignUpForm/>
+        </section>  
     )
 }
 

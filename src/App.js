@@ -3,7 +3,7 @@ import { HomePage, HatsPage, NotFoundPage, ShopPage, AboutPage, SignInPage } fro
 import { Route, Switch, Link } from "react-router-dom"
 import { InputForm } from './components'; 
 import { Header } from "./layouts/index"
-import { auth } from "./utils/firebase.utils"
+import { auth, createUserProfileDocument } from "./utils/firebase.utils"
 import {useState, useEffect} from "react"
 
 function App() {
@@ -11,8 +11,25 @@ function App() {
   const [userState, setUserState] = useState({ currentUser: null })
   useEffect(async ()=>{
     const unMount = auth.onAuthStateChanged(async user=>{
-      await setUserState({currentUser:user})
-      console.log(userState)
+      if(user){
+        const userRef = await createUserProfileDocument(user)
+
+        userRef.onSnapshot(snapShot => {
+          setUserState({ 
+            currentUser:{
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+           }, ()=>{
+             console.log(userState)
+           })
+        })
+      }
+      
+      setUserState({ 
+        currentUser:null
+       })
+
     })
 
     return unMount
