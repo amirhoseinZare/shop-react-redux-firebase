@@ -1,0 +1,56 @@
+$button-bgcolor :rgb(18, 83, 202);
+$hover-button-bgcolor :rgb(38, 101, 218);
+
+.signin-form {
+    padding-top: 50px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    form {
+        width: 40%;
+
+        .input-form--container {
+            margin: 50px 0;
+        }
+
+        .input-form--container:last-child {
+            margin-bottom: 10px;
+        }
+
+        .signin-button {
+            padding:10px 20px;
+            background-color:$button-bgcolor ;
+            color: #fff;
+            transition:all .3s ease-in;
+            -webkit-transition:all .3s ease-in;
+            -moz-transition:all .3s ease-in;
+            -ms-transition:all .3s ease-in;
+            -o-transition:all .3s ease-in;
+            margin-top: 10px;
+            &:hover {
+                background-color:$hover-button-bgcolor;
+                transition:all .3s ease-in;
+                -webkit-transition:all .3s ease-in;
+                -moz-transition:all .3s ease-in;
+                -ms-transition:all .3s ease-in;
+                -o-transition:all .3s ease-in;
+            }
+        
+        }     
+
+        .signin-oauth-button {
+            padding:10px 20px;
+            background-color:#000 ;
+            color:#fff;
+            margin-left: 10px;
+        }
+
+        .form-message {
+            margin-top: 40px;
+        }
+
+    }
+  
+}

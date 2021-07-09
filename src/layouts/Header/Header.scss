@@ -1,0 +1,33 @@
+.header {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    align-items: center;
+
+    .navigation {
+        display: flex;
+        align-items: center
+    }
+
+    .navitem-list {
+        display: flex;
+        flex-direction: row;
+
+        .nav-item:last-child {
+            margin-right: 70px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #000;
+            &:hover {
+                color:#aaa;
+            }
+        }
+
+    }
+
+}
+

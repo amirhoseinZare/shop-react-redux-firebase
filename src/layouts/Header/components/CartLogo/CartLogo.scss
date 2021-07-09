@@ -1,0 +1,22 @@
+.cart-logo {
+    cursor: context-menu;
+    position: relative;
+
+    .cart-items--number {
+        width: 25px;
+        height: 25px;
+        line-height:25px;
+        border-radius: 50%;
+        background-color: rgb(219, 219, 219);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        position:absolute;
+        top: 20px;
+        left: -5px;
+        text-align: center;
+        color:rgb(0, 0, 0);
+    }
+
+}

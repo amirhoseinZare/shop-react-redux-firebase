@@ -1,0 +1,31 @@
+.menu-items--container {
+
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+    .menu-item:nth-child(-n+3) {
+        width: 33%;
+        height: 315px;
+        margin: 10px 0;
+    }
+
+    .menu-item:nth-child(n+4) {
+        width: 49.7%;
+        height: 445px;
+        margin: 0 0 10px 0;
+    }
+
+    .menu-item {
+        img:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+    }
+}
