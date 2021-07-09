@@ -1,7 +1,9 @@
 import "./Header.scss"
 import {HeaderLogo , NavItem, CartLogo} from "./components/index"
+import {auth} from "../../utils/firebase.utils"
 
-function Header(){
+function Header(props){
+    const {user:{currentUser:authUser}} = props
     return (
         <header className="header">
             <HeaderLogo />
@@ -10,7 +12,7 @@ function Header(){
                     <NavItem linkUrl="" name="home"/>
                     <NavItem linkUrl="shop" name="shop"/>
                     <NavItem linkUrl="about" name="about"/>
-                    <NavItem linkUrl="signIn" name="signIn"/>
+                    { authUser ?  <div style={{marginRight:15, cursor:'pointer'}} onClick={()=>auth.signOut()}>signOut</div> : <NavItem linkUrl="signin" name="signin"/>}
                 </nav>
                 <CartLogo/>
             </div>

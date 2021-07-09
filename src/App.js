@@ -24,7 +24,7 @@ function App() {
 
   return (
       <div className="App">
-        <Header/>
+        <Header user={userState}/>
         <Switch>
             <Route exact component={HomePage} path="/" />
             <Route exact component={HatsPage} path="/hats" />
