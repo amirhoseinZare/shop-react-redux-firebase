@@ -39,17 +39,17 @@ function App() {
   }, [userState])
 
   return (
-      <div className="App">
-        <Header user={userState}/>
-        <Switch>
-            <Route exact component={HomePage} path="/" />
-            <Route exact component={HatsPage} path="/hats" />
-            <Route exact component={ShopPage} path="/shop" />
-            <Route exact component={AboutPage} path="/about" />
-            <Route exact component={SignInPage} path="/signin" />
-            <Route  component={NotFoundPage} />
-        </Switch>
-      </div>
+    <div className="App">
+      <Header user={userState}/>
+      <Switch>
+          <Route exact component={HomePage} path="/" />
+          <Route exact component={HatsPage} path="/hats" />
+          <Route exact component={ShopPage} path="/shop" />
+          <Route exact component={AboutPage} path="/about" />
+          <Route exact component={SignInPage} path="/signin" />
+          <Route  component={NotFoundPage} />
+      </Switch>
+    </div>
   );
 }
 
